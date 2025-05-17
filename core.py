@@ -6,7 +6,6 @@ from langchain.chains import RetrievalQA
 from dotenv import load_dotenv
 import os
 
-
 def load_environment_variables():
     """Load and validate environment variables."""
     load_dotenv()
