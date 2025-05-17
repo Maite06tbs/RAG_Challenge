@@ -1,3 +1,6 @@
+from PIL import Image
+import pytesseract
+from langchain.schema import Document
 import streamlit as st
 import time
 import os
@@ -9,6 +12,11 @@ from core import (
     create_qa_chain,
     ask_question
 )
+
+def load_image_text(image_path):
+    image = Image.open(image_path)
+    text = pytesseract.image_to_string(image)
+    return [Document(page_content=text)]
 
 st.set_page_config(
     page_title="MediBot Vision",
@@ -85,7 +93,7 @@ with st.sidebar:
                         openai_api_key, openai_api_base, model_name = load_environment_variables()
                         embedding_model = "text-embedding-3-small"
                         
-                        chunks = load_and_split_documents(fileName)
+                        chunks = load_image_text(fileName)
                         vectorstore = create_vector_store(chunks, embedding_model)
                         llm = get_openai_llm(model_name, openai_api_key, openai_api_base)
                         qa_chain = create_qa_chain(llm, vectorstore)
@@ -117,6 +125,7 @@ for message in st.session_state.messages:
     avatar = "🤓" if message["role"] == "assistant" else "😃"
     with st.chat_message(message["role"], avatar=avatar):
         st.write(message["content"])
+
 
 def pipeline(prompt):
     if st.session_state.qa_chain is None:

@@ -10,3 +10,5 @@ pypdf
 streamlit
 rich
 tf-keras
+pillow
+pytesseract
