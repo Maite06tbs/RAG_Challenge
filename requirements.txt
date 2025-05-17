@@ -1,0 +1,12 @@
+langchain
+langchain-openai
+langchain-community
+langchain-huggingface
+sentence-transformers
+huggingface_hub
+faiss-cpu
+openai
+pypdf
+streamlit
+rich
+tf-keras
