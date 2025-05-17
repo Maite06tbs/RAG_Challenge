@@ -8,8 +8,20 @@
 
 Ce projet a été réalisé à l’issue d’un workshop sur le workshop **🎉 Retrieval-Augmented Generation (RAG)**. L’objectif : implémenter notre propre système basé sur RAG.
 
----
+**Image2Answer** est une solution qui permet à l’utilisateur de charger une image contenant du texte (comme un document scanné, une photo de notes ou une image médicale), et de poser des questions dessus pour obtenir des réponses intelligentes basées sur le contenu lu. 
 
+---
+**🎨 Exemples d’utilisation**
+
+📚 Étudiant
+Prendre une photo de ses notes manuscrites et demander :
+“Résume-moi cette partie en 3 points.”
+
+🧾 Administration
+Télécharger une copie d’un justificatif administratif et demander :
+“Quelle est la date limite de validité ?”
+
+---
 ## 🚀 Fonctionnalités clés
 
 1. **Upload Multi‑format**  
@@ -69,9 +81,6 @@ uv --version
 Cloner le dépôt et installer les dépendances :
 
 ```shell
-# Cloner le dépôt
-git clone https://github.com/yourusername/Retrieval-Augmented-Generation-Workshop.git
-cd Retrieval-Augmented-Generation-Workshop
 
 # Créer et activer un environnement virtuel
 python -m venv venv
@@ -95,3 +104,6 @@ OPENAI_API_KEY=your_openai_api_key
 OPENAI_API_BASE=https://api.openai.com/v1 # Point de terminaison OpenAI par défaut
 MODÈLE_NOM=gpt-3.5-turbo # ou gpt-4
 ```
+
+
+**Image2Answer est un assistant IA capable de lire et comprendre n'importe quelle image contenant du texte. Posez-lui des questions, il vous répond en s'appuyant sur ce qu'il a "lu" dans l'image.** *Amusez-vous!*
